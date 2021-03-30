@@ -9,4 +9,4 @@
 3/ Bootstrap
 
 Поиграть можно тут:
-https://avsvistunov.github.io/15game/
+https://avsvistunov.github.io/15gameproduction/
