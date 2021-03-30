@@ -1,38 +1,68 @@
+:root {
+  /* размер плашки */
+  --quadro-size: 50px;
+  --cols-count: 4;
+  --rows-count: var(--cols-count);
+  --item-fill-color: #ccc;
+  --item-border-color: #989898;
+  --item-border-width: 3px;
+  --item-margin: 2px;
+  --area-border-color: #999;
+  --radius: 12px;
+  --item-hovered-text-color: var(--item-border-color);
+}
+
 .App {
+  width: 500px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* коробка с пятнашками */
+.PlayArea {
+  border: var(--item-border-width) solid var(--area-border-color);
+  border-radius: var(--radius);
+  padding: 2px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin: 12px auto;
 }
 
-.App-link {
-  color: #61dafb;
+.PlayArea-Size-3 {
+  width: calc((var(--quadro-size) + 2 * var(--item-border-width)) * 3 + 4px);
+}
+.PlayArea-Size-4 {
+  width: calc((var(--quadro-size) + 2 * var(--item-border-width)) * 4 + 4px);
+}
+.PlayArea-Size-5 {
+  width: calc((var(--quadro-size) + 2 * var(--item-border-width)) * 5 + 4px);
+}
+.PlayArea-Size-6 {
+  width: calc((var(--quadro-size) + 2 * var(--item-border-width)) * 6 + 4px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* пятнашечка */
+.Item {
+  width: var(--quadro-size);
+  height: var(--quadro-size);
+  margin: var(--item-margin);
+  border-radius: var(--radius);
+  border: var(--item-border-width) solid transparent;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 42px;
+  box-sizing: border-box;
+}
+
+.Item:hover {
+  color: var(--item-hovered-text-color);
+  cursor: pointer;
+}
+
+.FilledItem {
+  border-color: var(--item-border-color);
+  background: var(--item-fill-color);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
